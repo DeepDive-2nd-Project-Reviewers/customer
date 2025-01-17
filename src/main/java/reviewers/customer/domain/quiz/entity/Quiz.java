@@ -3,6 +3,7 @@ package reviewers.customer.domain.quiz.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.question.entity.Question;
 import reviewers.customer.global.common.BaseTimeEntity;
 
 import java.time.LocalDateTime;

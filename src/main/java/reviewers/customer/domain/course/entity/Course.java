@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.Instructor.entity.Instructor;
+import reviewers.customer.domain.content.entity.Content;
+import reviewers.customer.domain.lecture.entity.Lecture;
 import reviewers.customer.global.common.BaseTimeEntity;
 
 import java.time.LocalDate;

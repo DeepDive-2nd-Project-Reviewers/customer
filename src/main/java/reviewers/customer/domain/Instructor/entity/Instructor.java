@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.teaching.entity.Teaching;
 import reviewers.customer.domain.user.entity.User;
 import reviewers.customer.domain.user.enums.Role;
 

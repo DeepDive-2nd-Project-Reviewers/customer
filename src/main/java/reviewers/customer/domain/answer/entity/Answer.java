@@ -3,6 +3,7 @@ package reviewers.customer.domain.answer.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.question.entity.Question;
 import reviewers.customer.domain.student.entity.Student;
 import reviewers.customer.global.common.BaseTimeEntity;
 

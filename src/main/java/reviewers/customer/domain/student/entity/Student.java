@@ -1,15 +1,15 @@
 package reviewers.customer.domain.student.entity;
 
-import com.example.lms.domain.answer.entity.Answer;
-import com.example.lms.domain.quizGrade.entity.QuizGrade;
-import com.example.lms.domain.registration.entity.Registration;
-import com.example.lms.domain.user.enums.Role;
-import com.example.lms.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.answer.entity.Answer;
+import reviewers.customer.domain.quizGrade.entity.QuizGrade;
+import reviewers.customer.domain.registration.entity.Registration;
+import reviewers.customer.domain.user.entity.User;
+import reviewers.customer.domain.user.enums.Role;
 
 import java.util.ArrayList;
 import java.util.List;

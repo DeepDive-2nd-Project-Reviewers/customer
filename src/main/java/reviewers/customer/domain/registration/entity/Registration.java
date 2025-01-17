@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import reviewers.customer.domain.course.entity.Course;
 import reviewers.customer.domain.registration.enums.RegistrationStatus;
 import reviewers.customer.domain.student.entity.Student;
 import reviewers.customer.global.common.BaseTimeEntity;

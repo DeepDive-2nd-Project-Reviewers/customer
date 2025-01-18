@@ -6,21 +6,15 @@ import reviewers.customer.domain.course.entity.Course;
 
 @Component
 public class AssignmentGradeMapper {
-    public AssignmentGradeOverallResponseDto toDto(Course course, int averageGrade, int highestGrade, int lowestGrade,
-            int gradeA, int gradeB, int gradeC, int gradeD, int gradeF) {
-        AssignmentGradeOverallResponseDto.GradeDistribution gradeDistribution = createGradeDistribution(gradeA, gradeB, gradeC, gradeD, gradeF);
-
+    public AssignmentGradeOverallResponseDto toDto(Course course, double averageGrade, int highestGrade, int lowestGrade,
+                                                   AssignmentGradeOverallResponseDto.GradeDistribution distribution) {
         return AssignmentGradeOverallResponseDto.builder()
                 .courseId(course.getCourseId())
                 .courseTitle(course.getCourseTitle())
                 .averageGrade(averageGrade)
                 .highestGrade(highestGrade)
                 .lowestGrade(lowestGrade)
-                .gradeDistribution(gradeDistribution)
+                .gradeDistribution(distribution)
                 .build();
-    }
-
-    public AssignmentGradeOverallResponseDto.GradeDistribution createGradeDistribution(int gradeA, int gradeB, int gradeC, int gradeD, int gradeF) {
-        return new AssignmentGradeOverallResponseDto.GradeDistribution(gradeA, gradeB, gradeC, gradeD, gradeF);
     }
 }

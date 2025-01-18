@@ -10,7 +10,7 @@ public class AssignmentGradeOverallResponseDto {
 
     private String courseTitle;
 
-    private float averageGrade;
+    private Double averageGrade;
 
     private int highestGrade;
 
@@ -19,6 +19,7 @@ public class AssignmentGradeOverallResponseDto {
     private GradeDistribution gradeDistribution;
 
     @Getter
+    @Builder
     public static class GradeDistribution {
         private final int A;
         private final int B;

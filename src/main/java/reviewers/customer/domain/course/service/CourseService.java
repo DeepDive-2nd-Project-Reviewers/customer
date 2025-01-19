@@ -12,6 +12,6 @@ public class CourseService {
     private final CourseRepository courseRepository;
 
     public Course findById(Long id) {
-        return courseRepository.findByCourseId(id);
+        return courseRepository.findById(id).orElseThrow();
     }
 }

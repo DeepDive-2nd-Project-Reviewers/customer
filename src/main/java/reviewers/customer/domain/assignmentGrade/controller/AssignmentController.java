@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import reviewers.customer.domain.assignmentGrade.service.AssignmentGradeService;
 import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeOverallRequestDto;
 import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeOverallResponseDto;
+import reviewers.customer.global.result.Success;
+import reviewers.customer.global.result.SuccessResponse;
 
 @RestController
 @RequestMapping("/api/v1/assignment")
@@ -17,7 +19,8 @@ public class AssignmentController {
     private final AssignmentGradeService assignmentGradeService;
 
     @PostMapping
-    public AssignmentGradeOverallResponseDto getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto){
-        return assignmentGradeService.overallAssignmentGrade(dto.getCourseId());
+    public SuccessResponse<AssignmentGradeOverallResponseDto> getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto){
+        AssignmentGradeOverallResponseDto response = assignmentGradeService.overallAssignmentGrade(dto.getCourseId());
+        return SuccessResponse.ok(Success._GET_DISTRIBUTION, response);
     }
 }

@@ -1,22 +1,26 @@
 package reviewers.customer.domain.assignmentGrade.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeListResponseDto;
-import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeRequestDto;
-import reviewers.customer.domain.assignmentGrade.service.AssignmentService;
+import reviewers.customer.domain.assignmentGrade.service.AssignmentGradeService;
+import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeOverallRequestDto;
+import reviewers.customer.domain.assignmentGrade.dto.AssignmentGradeOverallResponseDto;
+import reviewers.customer.global.success.SuccessResponseStatus;
+import reviewers.customer.global.success.SuccessResponse;
 
 @RestController
+@RequestMapping("/api/v1/assignment")
 @RequiredArgsConstructor
-@RequestMapping
 public class AssignmentController {
-    private final AssignmentService assignmentService;
 
-    @GetMapping("assignment/grades")
-    public AssignmentGradeListResponseDto getAssignmentGradeByStudentId(@RequestBody AssignmentGradeRequestDto request) {
-        return assignmentService.findAllByStudentId(request.getStudentId());
+    private final AssignmentGradeService assignmentGradeService;
+
+    @PostMapping
+    public SuccessResponse<AssignmentGradeOverallResponseDto> getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto){
+        AssignmentGradeOverallResponseDto response = assignmentGradeService.overallAssignmentGrade(dto.getCourseId());
+        return SuccessResponse.ok(SuccessResponseStatus._GET_DISTRIBUTION, response);
     }
 }

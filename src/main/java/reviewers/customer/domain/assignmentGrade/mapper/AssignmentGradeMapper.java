@@ -26,7 +26,6 @@ public class AssignmentGradeMapper {
                         .toList())
                 .build();
     }
-
     public AssignmentGradeOverallResponseDto toDto(Course course, double averageGrade, int highestGrade, int lowestGrade,
                                                    AssignmentGradeOverallResponseDto.GradeDistribution distribution) {
         return AssignmentGradeOverallResponseDto.builder()
@@ -38,4 +37,5 @@ public class AssignmentGradeMapper {
                 .gradeDistribution(distribution)
                 .build();
     }
+
 }

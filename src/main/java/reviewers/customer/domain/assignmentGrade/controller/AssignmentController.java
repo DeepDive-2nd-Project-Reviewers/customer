@@ -22,7 +22,7 @@ public class AssignmentController {
     }
 
     @PostMapping("/assignment/distribution")
-    public SuccessResponse<AssignmentGradeOverallResponseDto> getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto){
+    public SuccessResponse<AssignmentGradeOverallResponseDto> getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto) {
         AssignmentGradeOverallResponseDto response = assignmentService.overallAssignmentGrade(dto.getCourseId());
         return SuccessResponse.ok(SuccessResponseStatus._GET_DISTRIBUTION, response);
     }

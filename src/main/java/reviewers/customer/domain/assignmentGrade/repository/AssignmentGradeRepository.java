@@ -8,6 +8,8 @@ import reviewers.customer.domain.assignmentGrade.entity.AssignmentGrade;
 import java.util.List;
 
 public interface AssignmentGradeRepository extends JpaRepository<AssignmentGrade, Long> {
+    List<AssignmentGrade> findAllByStudentId(Long studentId);
+
     @Query("""
     SELECT
         COALESCE(AVG(ag.grade), 0.0),

@@ -12,16 +12,16 @@ import reviewers.customer.global.success.SuccessResponseStatus;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping
+@RequestMapping("/assignment")
 public class AssignmentController {
     private final AssignmentService assignmentService;
 
-    @GetMapping("/assignment/grades")
+    @GetMapping("/grades")
     public AssignmentGradeListResponseDto getAssignmentGradeByStudentId(@RequestBody AssignmentGradeRequestDto request) {
         return assignmentService.findAllByStudentId(request.getStudentId());
     }
 
-    @PostMapping("/assignment/distribution")
+    @GetMapping("/distribution")
     public SuccessResponse<AssignmentGradeOverallResponseDto> getGradesDistribution(@RequestBody AssignmentGradeOverallRequestDto dto) {
         AssignmentGradeOverallResponseDto response = assignmentService.overallAssignmentGrade(dto.getCourseId());
         return SuccessResponse.ok(SuccessResponseStatus._GET_DISTRIBUTION, response);

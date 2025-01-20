@@ -1,6 +1,7 @@
 package reviewers.customer.domain.quizGrade.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class QuizController {
 
     private final QuizService quizService;
 
-    @PostMapping("/score")
+    @GetMapping("/quiz/score")
     public QuizGradeListResponseDto score(@RequestBody QuizGradeRequestDto quizGradeRequestDto) {
         return quizService.findAllByStudentId(quizGradeRequestDto.getStudentId());
     }

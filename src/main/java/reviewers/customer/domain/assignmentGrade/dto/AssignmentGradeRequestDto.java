@@ -4,5 +4,5 @@ import lombok.Getter;
 
 @Getter
 public class AssignmentGradeRequestDto {
-    private Long StudentId;
+    private Long studentId;
 }

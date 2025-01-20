@@ -1,11 +1,12 @@
 package reviewers.customer.domain.assignment.entity;
 
+
+import reviewers.customer.domain.course.entity.Course;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import reviewers.customer.domain.course.entity.Course;
 
 import java.time.LocalDate;
 
@@ -16,16 +17,20 @@ public class Assignment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "assignment_id", nullable = false)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
+    @Column(name = "assignment_title", nullable = false, length = 50)
     private String title;
 
+    @Column(name = "assignment_description", nullable = false, length = 200)
     private String description;
 
+    @Column(name = "assignment_due_date", nullable = false)
     private LocalDate dueDate;
 
     @Builder

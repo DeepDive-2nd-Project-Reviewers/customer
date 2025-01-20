@@ -12,7 +12,7 @@ import reviewers.customer.global.success.SuccessResponseStatus;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/assignment")
+@RequestMapping("/api/v1/assignment")
 public class AssignmentController {
     private final AssignmentService assignmentService;
 

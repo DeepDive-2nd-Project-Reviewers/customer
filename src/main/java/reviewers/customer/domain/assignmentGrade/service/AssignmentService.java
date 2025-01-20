@@ -19,5 +19,4 @@ public class AssignmentService {
         List<AssignmentGrade> grades = assignmentGradeRepository.findAllByStudentId(studentId);
         return assignmentGradeMapper.toListDto(grades);
     }
-
 }

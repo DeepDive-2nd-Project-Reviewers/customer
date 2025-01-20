@@ -11,6 +11,4 @@ public class AssignmentGradeResponseDto {
     private long assignmentId;
     private String title;
     private long grade;
-    private String feedback;
-    private LocalDateTime submissionDate;
 }

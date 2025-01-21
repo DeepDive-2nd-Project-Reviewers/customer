@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY build/libs/customer-service-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/customer-0.0.1-SNAPSHOT.jar app.jar
 
 ENV DB_HOST=db_host_placeholder
 ENV DB_PORT=3306
